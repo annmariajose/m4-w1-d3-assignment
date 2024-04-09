@@ -15,12 +15,69 @@ Bitter
 FontAwesome
 
 ----------*/
+$headingColor: rgb(255,255,255);
+$headingBgColor1: rgb(58, 96, 115);
+$headingBgColor2: rgb(22, 34, 42);
+$textColor: rgb(0,0,0);
+
+@mixin center-text {
+  text-align: center;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Bitter";
+}
+
+h1 {
+  @include center-text;
+  padding: 150px;
+  background: linear-gradient(90deg, $headingBgColor1 0%, $headingBgColor2 100%);
+  color: $headingColor;
+}
+
+h2 {
+  @include center-text;
+  padding-top: 10px;
+  color: $textColor;
+}
+
+.itemGrid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+  width: 80%;
+  margin: auto;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include center-text;
+    padding-bottom: 50px;
+
+    img {
+      width: 250px;
+      height: 250px;
+    }
+
+    .name {
+      font-weight: 600;
+      padding-top: 10px;
+    }
+
+    .description {
+      font-style: italic;
+    }
+    
+    button {
+      padding: 5px;
+      margin-top: 10px;
+      background-color: white;
+    }
+  }
 }
 
 $max-width: 80em;
